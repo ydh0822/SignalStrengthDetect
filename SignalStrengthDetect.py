@@ -95,6 +95,9 @@ if __name__ == "__main__":
     os.system("sudo ifconfig "+str(interface)+" down")
     os.system("sudo iwconfig "+str(interface)+" mode monitor")
     os.system("sudo ifconfig "+str(interface)+" up")
+    print("input Channel : ", end = "")
+    CH = input()
+    os.system("sudo iwconfig "+interface+" channel "+CH)
     # sniff(iface=interface, prn = PacketHandler, count = 10)
 
     app = QApplication(sys.argv)
